@@ -15,28 +15,36 @@ class ContactListView extends StatelessWidget {
           shrinkWrap: true,
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, index) {
-            return InkWell(
-              onTap: () {},
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 8.0),
-                child: ListTile(
-                  title: Text(info[index]['name'].toString(),
-                      style: const TextStyle(fontSize: 18)),
-                  subtitle: Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Text(info[index]['message'].toString(),
-                        style: const TextStyle(fontSize: 15)),
+            return Column(
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: ListTile(
+                      title: Text(info[index]['name'].toString(),
+                          style: const TextStyle(fontSize: 18)),
+                      subtitle: Padding(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: Text(info[index]['message'].toString(),
+                            style: const TextStyle(fontSize: 15)),
+                      ),
+                      leading: CircleAvatar(
+                        radius: 30,
+                        backgroundImage:
+                            NetworkImage(info[index]["profilePic"].toString()),
+                      ),
+                      trailing: Text(info[index]['time'].toString(),
+                          style: const TextStyle(
+                              fontSize: 13, color: AppColor.defaultIconsColor)),
+                    ),
                   ),
-                  leading: CircleAvatar(
-                    radius: 30,
-                    backgroundImage:
-                        NetworkImage(info[index]["profilePic"].toString()),
-                  ),
-                  trailing: Text(info[index]['time'].toString(),
-                      style: const TextStyle(
-                          fontSize: 13, color: AppColor.defaultIconsColor)),
                 ),
-              ),
+                const Divider(
+                  color: AppColor.dividerColor,
+                  indent: 85,
+                )
+              ],
             );
           }),
     );
