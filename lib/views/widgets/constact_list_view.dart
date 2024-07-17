@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/constants/colors.dart';
 import 'package:whatsapp_clone/constants/dummies.dart';
 
+import '../ mobile/mobile_chat_box.dart';
+
 class ContactListView extends StatelessWidget {
   const ContactListView({super.key});
 
@@ -18,7 +20,12 @@ class ContactListView extends StatelessWidget {
             return Column(
               children: [
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const MobileChatBoxView()));
+                  },
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 8.0),
                     child: ListTile(
