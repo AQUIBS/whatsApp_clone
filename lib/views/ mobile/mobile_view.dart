@@ -49,6 +49,11 @@ class _MobileDashBoardViewState extends State<MobileDashBoardView> {
             ),
           ),
           body: const ContactListView(),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {},
+            backgroundColor: AppColor.tabColor,
+            child: const Icon(Icons.comment),
+          ),
         ));
   }
 }

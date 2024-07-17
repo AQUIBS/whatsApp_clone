@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/constants/images.dart';
+import 'package:whatsapp_clone/views/web/web_chat_appbar.dart';
+import 'package:whatsapp_clone/views/web/web_chat_textbar.dart';
+import 'package:whatsapp_clone/views/web/web_chat_view.dart';
 import 'package:whatsapp_clone/views/web/web_profile_bar.dart';
 import 'package:whatsapp_clone/views/web/web_search_bar.dart';
 import 'package:whatsapp_clone/views/widgets/constact_list_view.dart';
@@ -33,6 +36,13 @@ class _WebDashBoardViewState extends State<WebDashBoardView> {
           decoration: const BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.cover, image: AssetImage(AppImages.background))),
+          child: ListView(
+            children: const [
+              WebChatAppBar(),
+              WebChatBoxView(),
+              WebChatTextBar()
+            ],
+          ),
         ),
       ],
     ));
